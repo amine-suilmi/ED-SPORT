@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ED Sport - African Championship 2025</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="assets/logo.png" alt="ED Sport Logo" />
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li>
+            <a href="#champions" class="nav-link"
+              ><i class="fas fa-trophy"></i> Champions</a
+            >
+          </li>
+          <li>
+            <a href="#referees" class="nav-link"
+              ><i class="fas fa-user-tie"></i> Referees</a
+            >
+          </li>
+          <li>
+            <a href="#news" class="nav-link"
+              ><i class="fas fa-newspaper"></i> News</a
+            >
+          </li>
+          <li>
+            <a href="#register" class="nav-link"
+              ><i class="fas fa-user-plus"></i> Register</a
+            >
+          </li>
+          <li>
+            <a href="#market" class="nav-link"
+              ><i class="fas fa-shopping-bag"></i> Market</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+
+      <!-- Decorative -->
+      <img class="hero-africa" src="assets/africa.png" alt="" />
+      <img class="hero-trophy" src="assets/trophy.png" alt="" />
+
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="assets/logo.png" alt="" />
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-main">African Championship</span>
+          <span class="title-date">28 December 2025</span>
+        </h1>
+
+        <p class="hero-tagline">Where Champions Rise</p>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown-container">
+          <h2 class="countdown-label">Event Starts In:</h2>
+
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-text">Days</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-text">Hours</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-text">Minutes</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-text">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="hero-buttons">
+          <a href="#register" class="btn btn-primary">
+            <i class="fas fa-user-plus"></i> Register Now
+          </a>
+
+          <a href="#news" class="btn btn-secondary">
+            <i class="fas fa-newspaper"></i> Latest News
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTIONS (unchanged) ==================== -->
+    <!-- Champions -->
+    <section class="section champions-section" id="champions">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-trophy"></i> Our Champions
+          </h2>
+          <p class="section-subtitle">
+            Meet the elite athletes competing for glory
+          </p>
+        </div>
+
+        <div class="champions-grid">
+          <div class="champion-card">
+            <div class="champion-image"><i class="fas fa-medal"></i></div>
+            <h3>Mohamed Ali</h3>
+            <p class="champion-country">🇹🇳 Tunisia</p>
+            <p class="champion-title">2024 Champion</p>
+          </div>
+
+          <div class="champion-card">
+            <div class="champion-image"><i class="fas fa-medal"></i></div>
+            <h3>Fatima Hassan</h3>
+            <p class="champion-country">🇪🇬 Egypt</p>
+            <p class="champion-title">Women's Champion</p>
+          </div>
+
+          <div class="champion-card">
+            <div class="champion-image"><i class="fas fa-medal"></i></div>
+            <h3>Kwame Mensah</h3>
+            <p class="champion-country">🇬🇭 Ghana</p>
+            <p class="champion-title">Rising Star</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referees -->
+    <section class="section referees-section" id="referees">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-user-tie"></i> Official Referees
+          </h2>
+          <p class="section-subtitle">
+            Experienced professionals ensuring fair competition
+          </p>
+        </div>
+
+        <div class="referees-grid">
+          <div class="referee-card">
+            <div class="referee-icon"><i class="fas fa-user-tie"></i></div>
+            <h3>Chief Referee</h3>
+            <p>International certified with 15+ years experience</p>
+          </div>
+
+          <div class="referee-card">
+            <div class="referee-icon"><i class="fas fa-user-tie"></i></div>
+            <h3>Technical Judge</h3>
+            <p>Expert in Eagle Defense techniques</p>
+          </div>
+
+          <div class="referee-card">
+            <div class="referee-icon"><i class="fas fa-user-tie"></i></div>
+            <h3>Score Keeper</h3>
+            <p>Precision and accuracy guaranteed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="section news-section" id="news">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-newspaper"></i> Latest News
+          </h2>
+          <p class="section-subtitle">
+            Stay updated with championship announcements
+          </p>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-image"><i class="fas fa-bullhorn"></i></div>
+            <div class="news-content">
+              <span class="news-date"
+                ><i class="far fa-calendar"></i> 15 Jan 2025</span
+              >
+              <h3>Registration Now Open!</h3>
+              <p>
+                Athletes from across Africa can now register for the
+                championship.
+              </p>
+              <a href="#register" class="news-link"
+                >Register Now <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="news-content">
+              <span class="news-date"
+                ><i class="far fa-calendar"></i> 10 Jan 2025</span
+              >
+              <h3>Venue Confirmed</h3>
+              <p>
+                The championship will be held at the National Sports Complex in
+                Tunisia.
+              </p>
+              <a href="#" class="news-link"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <div class="news-image"><i class="fas fa-trophy"></i></div>
+            <div class="news-content">
+              <span class="news-date"
+                ><i class="far fa-calendar"></i> 5 Jan 2025</span
+              >
+              <h3>Prize Pool Announced</h3>
+              <p>Substantial prizes await the winners in each category.</p>
+              <a href="#" class="news-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register -->
+    <section class="section register-section" id="register">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-user-plus"></i> Register for Championship
+          </h2>
+          <p class="section-subtitle">
+            Join the most prestigious Eagle Defense event in Africa
+          </p>
+        </div>
+
+        <div class="register-content">
+          <div class="register-info">
+            <h3>Registration Information</h3>
+
+            <ul class="info-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Free registration for all
+                African countries
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Multiple weight categories
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Professional refereeing
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> International recognition
+              </li>
+            </ul>
+
+            <div class="contact-box">
+              <h4>Need Help?</h4>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@edsport.tn">info@edsport.tn</a>
+              </p>
+              <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+21612345678">+216 12 345 678</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="register-form-container">
+            <form class="register-form" id="registerForm">
+              <div class="form-group">
+                <label for="fullName"
+                  ><i class="fas fa-user"></i> Full Name *</label
+                >
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email"
+                    ><i class="fas fa-envelope"></i> Email *</label
+                  >
+                  <input type="email" id="email" name="email" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone"
+                    ><i class="fas fa-phone"></i> Phone *</label
+                  >
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="country"
+                    ><i class="fas fa-flag"></i> Country *</label
+                  >
+                  <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="Tunisia">🇹🇳 Tunisia</option>
+                    <option value="Morocco">🇲🇦 Morocco</option>
+                    <option value="Egypt">🇪🇬 Egypt</option>
+                    <option value="Algeria">🇩🇿 Algeria</option>
+                    <option value="Nigeria">🇳🇬 Nigeria</option>
+                    <option value="Ghana">🇬🇭 Ghana</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="category"
+                    ><i class="fas fa-list"></i> Category *</label
+                  >
+                  <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Master">Master</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-check-circle"></i> Submit Registration
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market -->
+    <section class="section market-section" id="market">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fas fa-shopping-bag"></i> Official Market
+          </h2>
+          <p class="section-subtitle">Get your official ED Sport merchandise</p>
+        </div>
+
+        <div class="market-grid">
+          <div class="product-card">
+            <div class="product-image"><i class="fas fa-tshirt"></i></div>
+            <h3>Official Jersey</h3>
+            <p class="product-price">45 TND</p>
+            <button class="btn btn-secondary">Coming Soon</button>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image"><i class="fas fa-medal"></i></div>
+            <h3>Championship Gear</h3>
+            <p class="product-price">65 TND</p>
+            <button class="btn btn-secondary">Coming Soon</button>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image"><i class="fas fa-tag"></i></div>
+            <h3>Accessories</h3>
+            <p class="product-price">25 TND</p>
+            <button class="btn btn-secondary">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="" />
+            <p>Where Champions Rise</p>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> info@edsport.tn</p>
+            <p><i class="fas fa-phone"></i> +216 12 345 678</p>
+          </div>
+
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#" class="social-link facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link tiktok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 ED Sport. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
