@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ED SPORT — Referees</title>
+
+    <!-- Main site CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Small page-specific styles for referee cards (presidential dark theme) -->
+    <style>
+      /* Page header / hero */
+      .ref-hero {
+        background: linear-gradient(
+          180deg,
+          rgba(2, 10, 22, 0.92),
+          rgba(6, 28, 50, 0.95)
+        );
+        padding: 120px 20px 40px;
+        text-align: center;
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .ref-hero h1 {
+        font-size: 2.6rem;
+        margin-bottom: 8px;
+        color: var(--primary-gold);
+        letter-spacing: 1px;
+      }
+      .ref-hero p {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 6px;
+      }
+
+      /* container */
+      .referees-container {
+        max-width: 1100px;
+        margin: 36px auto;
+        padding: 0 18px 80px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 22px;
+        align-items: start;
+      }
+
+      /* ID-card style */
+      .ref-card {
+        background: linear-gradient(
+          180deg,
+          rgba(8, 18, 34, 0.95),
+          rgba(6, 14, 26, 0.98)
+        );
+        border-radius: 12px;
+        padding: 18px;
+        color: #fff;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        border-left: 6px solid rgba(212, 175, 55, 0.18);
+        box-shadow: 0 10px 30px rgba(2, 8, 20, 0.6);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        cursor: pointer;
+        min-height: 120px;
+      }
+
+      .ref-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(11, 28, 50, 0.75);
+        border-left-color: var(--primary-gold);
+      }
+
+      .ref-photo {
+        width: 124px;
+        height: 124px;
+        border-radius: 8px;
+        overflow: hidden;
+        flex: 0 0 124px;
+        border: 3px solid rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(0, 0, 0, 0.1)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ref-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .ref-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .ref-name {
+        font-size: 1.18rem;
+        font-weight: 800;
+        color: var(--primary-gold);
+        letter-spacing: 0.6px;
+      }
+
+      .ref-meta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .ref-desc {
+        color: rgba(255, 255, 255, 0.75);
+        margin-top: 8px;
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      /* small badge on top right */
+      .ref-badge {
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(212, 175, 55, 0.98);
+        padding: 6px 10px;
+        border-radius: 8px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        align-self: start;
+        margin-left: auto;
+        border: 1px solid rgba(212, 175, 55, 0.08);
+      }
+
+      /* search box area (appears below navbar) */
+      #search-box {
+        display: none;
+        max-width: 1100px;
+        margin: 12px auto;
+        padding: 10px 18px;
+        background: transparent;
+      }
+      #search-box input {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: 2px solid rgba(212, 175, 55, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(0, 0, 0, 0.12)
+        );
+        color: #fff;
+      }
+
+      /* responsive */
+      @media (max-width: 900px) {
+        .referees-container {
+          grid-template-columns: 1fr;
+          margin-top: 18px;
+          padding-top: 6px;
+        }
+        .ref-card {
+          padding: 14px;
+          gap: 12px;
+          min-height: 140px;
+        }
+        .ref-photo {
+          width: 110px;
+          height: 110px;
+          flex: 0 0 110px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR (same visual system as site) -->
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/logo.png" />
+          <span>ED SPORT</span>
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe7PLqsnA4XoC5FqGplRBDyC_rq44TjDTsX52bWJMrX7ULT3Q/viewform?usp=dialog"
+          class="nav-link"
+          ><i class="fas fa-user-tie"></i> +Register</a
+        >
+      </div>
+
+      <div class="nav-center">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="champions.html" class="nav-item active">Champions</a>
+        <a href="#" class="nav-item">Events</a>
+        <a href="#" class="nav-item">About</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="menu-icon" onclick="openMenu()">☰</div>
+        <div class="search-icon" onclick="toggleSearch()">🔍</div>
+      </div>
+    </header>
+
+    <!-- Mobile full-screen menu (hidden on desktop) -->
+    <div id="mobileMenu" class="mobile-menu" style="display: none">
+      <a href="index.html">Home</a>
+      <a href="champions.html">Champions</a>
+      <a href="referees.html">Referees</a>
+      <a href="#">Events</a>
+      <a href="#">About</a>
+      <div class="close" onclick="closeMenu()">✖</div>
+    </div>
+
+    <!-- Search -->
+    <div id="search-box">
+      <input
+        style="color: black"
+        id="searchInput"
+        type="text"
+        placeholder="Search referees by name, country or license..."
+        onkeyup="searchReferees()"
+      />
+    </div>
+
+    <!-- Hero -->
+    <section class="ref-hero">
+      <h1>REFEREES — ED SPORT</h1>
+      <p>Official referees and certified officials • Digital credentials</p>
+    </section>
+
+    <!-- List -->
+    <main class="referees-container" id="refereesList">
+      <!-- cards generated by referees.js -->
+    </main>
+
+    <script src="referees.js"></script>
+    <script>
+      // Render list on load (referees.js will export "renderRefereeList" too)
+      if (typeof renderRefereeList === "function") renderRefereeList();
+    </script>
+  </body>
+</html>
