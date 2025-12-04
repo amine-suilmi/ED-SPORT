@@ -57,37 +57,50 @@
     <div class="profile-container" id="profile"></div>
 
     <script src="champions.js"></script>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
+<script src="champions.js"></script>
 
-      const champ = champions[id];
+<script>
+async function loadProfile() {
+  // Wait until champions are loaded
+  while (Object.keys(champions).length === 0) {
+    await new Promise(r => setTimeout(r, 100));
+  }
 
-      const profileDiv = document.getElementById("profile");
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-      if (!champ) {
-        profileDiv.innerHTML = "<h1 style='color:red;'>Champion Not Found</h1>";
-      } else {
-        profileDiv.innerHTML = `
-            <div class="profile-header">
-                <img src="assets/P-imges/${champ.image}">
-                <h1 class="profile-name">${champ.name}</h1>
-                <p>${champ.category}</p>
-            </div>
+  const champ = champions[id];
+  const profileDiv = document.getElementById("profile");
 
-            <div class="profile-section">
-                <h2>🏆 Record</h2>
-                <p>${champ.record}</p>
-            </div>
+  if (!champ) {
+    profileDiv.innerHTML = "<h1 style='color:red;'>Champion Not Found</h1>";
+    return;
+  }
 
-            <div class="profile-section">
-                <h2>📌 Informations</h2>
-                <p><b>Age:</b> ${champ.age}</p>
-                <p><b>Country:</b> ${champ.country}</p>
-                <p><b>Description:</b> ${champ.description}</p>
-            </div>
-        `;
-      }
-    </script>
+  profileDiv.innerHTML = `
+    <div class="profile-header">
+        <img src="assets/P-imges/${champ.image}">
+        <h1 class="profile-name">${champ.name}</h1>
+        <p>${champ.category}</p>
+    </div>
+
+    <div class="profile-section">
+        <h2>🏆 Record</h2>
+        <p>${champ.record}</p>
+    </div>
+
+    <div class="profile-section">
+        <h2>📌 Information</h2>
+        <p><b>Age:</b> ${champ.age}</p>
+        <p><b>Country:</b> ${champ.country}</p>
+        <p><b>Description:</b> ${champ.description}</p>
+    </div>
+  `;
+}
+
+loadProfile();
+</script>
+
   </body>
 </html>
+
