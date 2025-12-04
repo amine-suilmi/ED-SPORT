@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Champion Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .profile-container {
+        max-width: 900px;
+        margin: 120px auto;
+        padding: 20px;
+        color: white;
+      }
+
+      .profile-header {
+        text-align: center;
+      }
+
+      .profile-header img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid gold;
+        object-fit: cover;
+      }
+
+      .profile-name {
+        color: rgb(238, 202, 0);
+        font-size: 32px;
+        margin-top: 15px;
+      }
+
+      .profile-section {
+        margin-top: 40px;
+        background: #0c1d33;
+        padding: 20px;
+        border-left: 4px solid gold;
+        border-radius: 10px;
+      }
+
+      .profile-section h2 {
+        color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="assets/logo.png" />
+          <span>ED SPORT</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="profile-container" id="profile"></div>
+
+    <script src="champions.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      const champ = champions[id];
+
+      const profileDiv = document.getElementById("profile");
+
+      if (!champ) {
+        profileDiv.innerHTML = "<h1 style='color:red;'>Champion Not Found</h1>";
+      } else {
+        profileDiv.innerHTML = `
+            <div class="profile-header">
+                <img src="assets/P-imges/${champ.image}">
+                <h1 class="profile-name">${champ.name}</h1>
+                <p>${champ.category}</p>
+            </div>
+
+            <div class="profile-section">
+                <h2>🏆 Record</h2>
+                <p>${champ.record}</p>
+            </div>
+
+            <div class="profile-section">
+                <h2>📌 Informations</h2>
+                <p><b>Age:</b> ${champ.age}</p>
+                <p><b>Country:</b> ${champ.country}</p>
+                <p><b>Description:</b> ${champ.description}</p>
+            </div>
+        `;
+      }
+    </script>
+  </body>
+</html>
