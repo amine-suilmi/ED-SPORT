@@ -1,70 +1,49 @@
-const champions = {
-    "amine": {
-        name: "Amine Soulimi",
-        image: "amine.jpg",
-        category: "Featherweight Champion",
-        record: "12 Wins - 1 Loss - 0 Draws",
-        age: 24,
-        country: "Tunisia",
-        description: "A very technical fighter known for agility and strong kicks."
-    },
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTReZv3suTrntXt79WoTjom9_KiqIEGMyqblek0nNQ12XSx8ohzfHTg4hagIMi6Cg5Cuom2vMQHZLt7/pub?output=csv";
+let champions = {};
 
-    "omar": {
-        name: "Omar Ben Salah",
-        image: "omar.jpg",
-        category: "Heavyweight Champion",
-        record: "21 Wins - 3 Losses",
-        age: 28,
-        country: "Morocco",
-        description: "Powerful striker with an explosive finishing ability."
-    },
+fetch(sheetURL)
+  .then(res => res.text())
+  .then(csv => {
+    const rows = csv.split("\n").filter(r => r.trim() !== ""); // remove empty rows
 
-    "youssef": {
-        name: "Youssef Hedi",
-        image: "youssef.jpg",
-        category: "Lightweight Champion",
-        record: "15 Wins - 2 Losses",
-        age: 22,
-        country: "Algeria",
-        description: "Fast, smart, and one of the rising stars of ED SPORT."
-    },
-    "wissem": {
-        name: "wissem ghod",
-        image: "wissem.jpg",
-        category: "Featherweight Champion",
-        record: "100 Wins - 0Loss - 0 Draws",
-        age: 24,
-        country: "Tunisia",
-        description: "A very technical fighter known for agility and strong kicks."
-    },
-    "ali": {
-        name: "ali ghod",
-        image: "ali.jpg",
-        category: "Featherweight Champion",
-        record: "100 Wins - 0Loss - 0 Draws",
-        age: 24,
-        country: "Tunisia",
-        description: "A very technical fighter known for agility and strong kicks."
-    },
-};
+    for (let i = 1; i < rows.length; i++) {
+      const cols = rows[i].split(",");
 
-// Generate the champions list
-window.onload = () => {
-    const list = document.getElementById("championsList");
-    if (!list) return;
+      const id = cols[0].toLowerCase().replace(/\s/g, ""); 
 
-    Object.keys(champions).forEach(id => {
-        const c = champions[id];
+      champions[id] = {
+        name: cols[0],
+        image: cols[1],
+        category: cols[2],
+        record: cols[3],
+        age: cols[4],
+        country: cols[5],
+        description: cols[6]
+      };
+    }
 
-        list.innerHTML += `
-            <div class="champ-card" onclick="window.location='champion.html?id=${id}'">
-                <img src="assets/P-imges/${c.image}">
-                <h3>${c.name}</h3>
-                <p>${c.category}</p>
-            </div>
-        `;
-    });
-};
+    generateChampions();
+  })
+  .catch(err => {
+    console.error("Sheet Load Error:", err);
+  });
+
+function generateChampions() {
+  const list = document.getElementById("championsList");
+  list.innerHTML = "";
+
+  Object.keys(champions).forEach(id => {
+    const c = champions[id];
+
+    list.innerHTML += `
+      <div class="champ-card" onclick="window.location='champion.html?id=${id}'">
+        <img src="assets/P-imges/${c.image}">
+        <h3>${c.name}</h3>
+        <p>${c.category}</p>
+      </div>
+    `;
+  });
+}
 
 function toggleSearch() {
   const box = document.getElementById("search-box");
@@ -96,6 +75,7 @@ function searchChampions() {
     }
   });
 }
+
 function openMenu() {
   document.getElementById("mobileMenu").style.display = "flex";
 }
