@@ -9,44 +9,7 @@
 // Sample referees "database"
 // -----------------------
 const referees = {
-  "ali": {
-    name: "Ali Mansouri",
-    image: "ali.jpg",
-    license: "EDR-4532A",
-    level: "A",
-    experience: 7,
-    events: 122,
-    age: 34,
-    country: "Tunisia",
-    idnum: "REF-0110",
-    description: "Experienced referee known for fast decisions and fair judgment. Certified for international competitions."
-  },
-
-  "karim": {
-    name: "Karim Ben Omar",
-    image: "karim.jpg",
-    license: "EDR-1023B",
-    level: "B",
-    experience: 5,
-    events: 98,
-    age: 30,
-    country: "Morocco",
-    idnum: "REF-0104",
-    description: "Specialized in international competitions with great match control and athlete safety focus."
-  },
-
-  "amine": {
-    name: "Amine Rahmani",
-    image: "amine_referee.jpg",
-    license: "EDR-8841X",
-    level: "A",
-    experience: 9,
-    events: 165,
-    age: 38,
-    country: "Algeria",
-    idnum: "REF-0057",
-    description: "Senior referee and educator. Pioneer in ED SPORT arbitration and mentor to junior referees."
-  }
+  
 };
 
 // -----------------------
@@ -174,4 +137,5 @@ document.addEventListener('click', (e) => {
     mobile.style.display = 'none';
   }
 });
+
 
