@@ -550,14 +550,12 @@ ul {
     width: 96px;
     height: 96px;
     margin: 0 auto 18px;
-    background: var(--primary-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 2.6rem;
-    color: var(--primary-navy);
 }
+
 
 .referee-card h3 {
     font-size: 1.25rem;
@@ -1368,3 +1366,4 @@ ul {
   z-index: 99999;
   display: none;
 }
+
