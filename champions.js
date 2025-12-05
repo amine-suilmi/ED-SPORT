@@ -40,6 +40,7 @@ function generateChampions() {
         <img src="assets/P-imges/${c.image}">
         <h3>${c.name}</h3>
         <p>${c.category}</p>
+        <p>${c.country}</p>
       </div>
     `;
   });
@@ -83,4 +84,5 @@ function openMenu() {
 function closeMenu() {
   document.getElementById("mobileMenu").style.display = "none";
 }
+
 
