@@ -9,16 +9,16 @@ fetch(sheetURL)
     for (let i = 1; i < rows.length; i++) {
       const cols = rows[i].split(",");
 
-      const id = cols[0].toLowerCase().replace(/\s/g, ""); 
+      const id = cols[0]; 
 
       champions[id] = {
-        name: cols[0],
-        image: cols[1],
-        category: cols[2],
-        record: cols[3],
-        age: cols[4],
-        country: cols[5],
-        description: cols[6]
+        name: cols[1],
+        image: cols[2],
+        category: cols[3],
+        record: cols[4],
+        age: cols[5],
+        country: cols[6],
+        description: cols[7]
       };
     }
 
@@ -83,3 +83,4 @@ function openMenu() {
 function closeMenu() {
   document.getElementById("mobileMenu").style.display = "none";
 }
+
